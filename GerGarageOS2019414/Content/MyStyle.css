@@ -1,0 +1,117 @@
+﻿body {
+}
+
+/*http://www.dotnetfox.com/articles/gridview-custom-css-style-example-in-Asp-Net-1088.aspx*/
+.Grid {
+    background-color: #fff;
+    margin: 5px 0px 10px 15px;
+    border: none;
+    border-collapse: collapse;
+    font-family: Calibri;
+    color: #474747;
+    width: 100%;
+}
+
+    .Grid td {
+        padding: 2px;
+        border: none;
+        text-align: center;
+    }
+
+    .Grid th {
+        padding: 4px 2px;
+        color: #fff;
+        font-size: 0.9em;
+    }
+
+        .Grid .pgr td {
+            border-width: 0;
+            padding: 0 6px;
+            border-left: solid 1px #666;
+            font-weight: bold;
+            color: #fff;
+            line-height: 12px;
+        }
+
+        .Grid .pgr a {
+            color: Gray;
+            text-decoration: none;
+        }
+
+            .Grid .pgr a:hover {
+                color: #000;
+                text-decoration: none;
+            }
+
+table {
+    border: none;
+
+}
+
+.table td {
+    padding: 2px;
+    border: none;
+    text-align: center;
+}
+
+.table th {
+    padding: 4px 2px;
+    border: none;
+    color: grey;
+    text-align-last:center;
+    font-size: 0.9em;
+}
+
+
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+/*https://forums.asp.net/t/1487846.aspx?CalendarControl+Using+CSS+to+Style+*/
+.Calendar {
+    width: 100%;
+    border-color: #E9E9E9;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.SelectedDayStyle {
+    background: #f4f4f4;
+    color: Maroon;
+}
+
+.TodayDayStyle {
+    background-color: burlywood;
+    color: White;
+}
+
+.OtherMonthDayStyle {
+    color: #cccccc;
+}
+
+.DayHeaderStyle {
+    background-color: #e9e9e9;
+    background-image: url(images/blog/cal-header-bg.jpg);
+}
+
+.DayStyle {
+    border: 1px solid #cccccc;
+    height: 40px;
+}
+
+.TitleStyle {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 2px;
+}
+
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+
+    .body-content {
+        padding: 0;
+    }
+}

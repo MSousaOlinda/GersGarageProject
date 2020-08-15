@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="fabiofin_ireland" Class="DataContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=100.42.51.42;Initial Catalog=fabiofin_ireland;Persist Security Info=True;User ID=fabiofin_d" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="fabiofin_irelandConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="fabiofin_d.Customer" Member="Customers">
+    <Type Name="Customer">
+      <Column Name="id_customer" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="phone" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="fabiofin_ireland.Vehicle" Member="Vehicles">
+    <Type Name="Vehicle">
+      <Column Name="id_vehicle" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="model" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="brand" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="engine" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="fabiofin_ireland.Customer_Vehicle" Member="Customer_Vehicles">
+    <Type Name="Customer_Vehicle">
+      <Column Name="id_custVehicle" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_vehicle" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_customer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="license" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="fabiofin_ireland.Service_Types" Member="Service_Types">
+    <Type Name="Service_Type">
+      <Column Name="id_service" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="service_type" Member="service_type1" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="service_price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="fabiofin_ireland.Staff" Member="Staffs">
+    <Type Name="Staff">
+      <Column Name="id_staff" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="staff_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="birth_dt" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="staff_phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="staff_type" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="fabiofin_ireland.Items_Parts" Member="Items_Parts">
+    <Type Name="Items_Part">
+      <Column Name="id_items_parts" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="item_name" Type="System.Data.Linq.Binary" DbType="VarBinary(100)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="fabiofin_ireland.[Order]" Member="Borders">
+    <Type Name="Border">
+      <Column Name="id_order" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_booking" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_customer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_staff" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_service" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_parts_items" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="order_notes" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="fabiofin_ireland.Service_Status" Member="Service_Status">
+    <Type Name="Service_Status">
+      <Column Name="id_status" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="status_type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="status_description" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="fabiofin_ireland.Htry_Stts_Bking" Member="Htry_Stts_Bkings">
+    <Type Name="Htry_Stts_Bking">
+      <Column Name="id_histBooking" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_booking" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="fabiofin_ireland.Booking" Member="Bookings">
+    <Type Name="Booking">
+      <Column Name="id_booking" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="reservationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="customer_notes" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="id_customer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_vehicle" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_service" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_time" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="licence" Type="System.String" DbType="NChar(15)" CanBeNull="true" />
+      <Column Name="id_status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_staff" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="fabiofin_ireland.VW_Booking" Member="VW_Bookings">
+    <Type Name="VW_Booking">
+      <Column Name="id_booking" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="reservationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="customer_notes" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="id_customer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="id_vehicle" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="model" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="brand" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="engine" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="id_service" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="service_type" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="id_time" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="time" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="status_type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="id_staff" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="staff_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="fabiofin_ireland.VW_Order" Member="VW_Orders">
+    <Type Name="VW_Order">
+      <Column Name="id_order" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_booking" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="reservationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="customer_notes" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="id_customer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="id_staff" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="staff_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="id_service" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="service_type" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="service_price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="status_type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="fabiofin_ireland.VW_Invoice" Member="VW_Invoices">
+    <Type Name="VW_Invoice">
+      <Column Name="id_invoice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_order" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_booking" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_customer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="id_service" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="service_type" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="service_price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_items_parts" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="item_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="fabiofin_ireland.Invoice" Member="Invoices">
+    <Type Name="Invoice">
+      <Column Name="id_invoice" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_order" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_booking" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_customer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_service" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_items_parts" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="fabiofin_ireland.PR_TimeAvailable" Method="PR_TimeAvailable">
+    <Parameter Name="dataSelected" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="PR_TimeAvailableResult">
+      <Column Name="id_time" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="time" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="reservationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="qtde_IdTime" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>
